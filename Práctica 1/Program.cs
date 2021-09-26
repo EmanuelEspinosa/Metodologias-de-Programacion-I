@@ -55,5 +55,42 @@ namespace Práctica_1
             string gen = nombres[rnd.Next(0, 14)] + " " + apellidos[rnd.Next(0, 14)];
             return gen;
         }
+        public static void informar(Coleccionable colecc)
+        {
+            Console.WriteLine("* Hay {0} elementos en la colección", colecc.Cuantos());
+            Console.WriteLine("* El menor elemento es: {0}", (((Numero)colecc.minimo()).getValor()));
+            Console.WriteLine("* El mayor elemento es: {0}", (((Numero)colecc.maximo()).getValor()));
+            Console.Write("Ingrese un valor por teclado: ");
+            Comparable comparable = new Numero(int.Parse(Console.ReadLine()));
+            if (colecc.contiene(comparable))
+                Console.WriteLine("El elemento leído está en la colección");
+            else
+                Console.WriteLine("El elemento leído no está en la colección");
+        }
+        //public static void informar(Coleccionable colec)
+        //{
+        //    Console.WriteLine("* Hay {0} elementos en la colección", colec.Cuantos());
+        //    Console.WriteLine("* El menor elemento es: {0}", (((Persona)colec.minimo()).getDni()));
+        //    Console.WriteLine("* El mayor elemento es: {0}", (((Persona)colec.maximo()).getDni()));
+        //    Console.Write("Ingrese un valor por teclado: ");
+        //    Comparable comparable = new Persona("", int.Parse(Console.ReadLine()));
+        //    if (colec.contiene(comparable))
+        //        Console.WriteLine("El elemento leído está en la colección");
+        //    else
+        //        Console.WriteLine("El elemento leído no está en la colección");
+        //}
+
+        //public static void informar(Coleccionable colec)
+        //{
+        //    Console.WriteLine("* Hay {0} elementos en la colección", colec.Cuantos());
+        //    Console.WriteLine("* El menor elemento es: {0}", (((Alumno)colec.minimo()).getLegajo()));
+        //    Console.WriteLine("* El mayor elemento es: {0}", (((Alumno)colec.maximo()).getLegajo()));
+        //    Console.Write("Ingrese un valor por teclado: ");
+        //    Comparable comp = new Alumno("", 0, int.Parse(Console.ReadLine()), 0);
+        //    if (colec.contiene(comp))
+        //        Console.WriteLine("El elemento leído está en la colección");
+        //    else
+        //        Console.WriteLine("El elemento leído no está en la colección");
+        //}
     }
 }
