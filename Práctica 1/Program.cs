@@ -6,7 +6,41 @@ namespace Práctica_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            /* EJERCICIO 7 */
+            Pila pila = new Pila();
+            Cola cola = new Cola();
+            llenar(pila);
+            llenar(cola);
+            informar(pila);
+            informar(cola);
+
+            /* EJERCICIO 9 */
+            //Pila pila = new Pila();
+            //Cola cola = new Cola();
+            //ColeccionMultiple coleccion = new ColeccionMultiple(pila, cola);
+            //llenar(pila);
+            //llenar(cola);
+            //informar(pila);
+            //informar(cola);
+            //informar(coleccion);
+
+            ///* EJERCICIO 13 */
+            //Pila pila = new Pila();
+            //Cola cola = new Cola();
+            //ColeccionMultiple coleccion = new ColeccionMultiple(pila, cola);
+            //llenarPersonas(pila);
+            //llenarPersonas(cola);
+            //informar(coleccion);
+
+            ///* EJERCICIO 17 */
+            //Pila pila = new Pila();
+            //Cola cola = new Cola();
+            //ColeccionMultiple coleccion = new ColeccionMultiple(pila, cola);
+            //llenarAlumnos(pila);
+            //llenarAlumnos(cola);
+            //informar(coleccion);
+
+            Console.ReadKey(true);
 
         }
         public static void llenar(Coleccionable coleccion)
