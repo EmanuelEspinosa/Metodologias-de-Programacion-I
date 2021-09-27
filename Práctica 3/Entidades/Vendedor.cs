@@ -15,7 +15,7 @@ namespace Práctica_3
         {
             this.SueldoBasico = SueldoBasico;
             this.bonus = 1;
-            this.estrategia = new ComparacionPorBonus();
+            this.estrategia = new ComparacionPorSueldoBasico();
             observadores = new List<observador>();
         }
         public void venta(double monto)
@@ -46,7 +46,7 @@ namespace Práctica_3
         }
         public override string ToString()
         {
-            return (nombre,bonus).ToString();
+            return (nombre,SueldoBasico,bonus).ToString();
         }
         public double getMonto()
         {

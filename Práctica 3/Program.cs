@@ -9,14 +9,14 @@ namespace Práctica_3
             //Pila pila = new Pila();
             //Cola cola = new Cola();
             //ColeccionMultiple multiple = new ColeccionMultiple(pila, cola);
-            //llenar(pila,3);
-            //llenar(cola,3);
+            //llenar(pila, 3);
+            //llenar(cola, 3);
 
-            //informar(pila,3);
+            //informar(pila, 3);
             //Console.WriteLine("\n");
-            //informar(cola,3);
+            //informar(cola, 3);
             //Console.WriteLine("\n");
-            //informar(multiple,3);
+            //informar(multiple, 3);
 
             Coleccionable coleccion = new Cola();
             llenar(coleccion, 3);

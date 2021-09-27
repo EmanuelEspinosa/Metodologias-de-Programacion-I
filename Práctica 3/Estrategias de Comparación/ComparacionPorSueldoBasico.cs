@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Práctica_3
 {
-    class ComparacionPorBonus : IComparisonStrategy
+    class ComparacionPorSueldoBasico : IComparisonStrategy
     {
         public bool EsIgual(Comparable comp1, Comparable comp2)
         {
