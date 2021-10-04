@@ -34,20 +34,40 @@ namespace Práctica_5
             //}
             //maestro.teachingAClass();
 
-            Coleccionable colec = new PilaProxy();
-            colec.agregar(new Numero(5));
-            colec.agregar(new Numero(10));
-            colec.agregar(new Numero(3));
-            Console.WriteLine("La colección tiene {0} elemetos",colec.Cuantos());
-            Console.WriteLine("El minimo elemento es: {0}",colec.minimo());
-            Console.WriteLine("El máximo elemento es: {0}",colec.maximo());
+            //Coleccionable colec = new PilaProxy();
+            //colec.agregar(new Numero(5));
+            //colec.agregar(new Numero(10));
+            //colec.agregar(new Numero(3));
+            //Console.WriteLine("La colección tiene {0} elemetos",colec.Cuantos());
+            //Console.WriteLine("El minimo elemento es: {0}",colec.minimo());
+            //Console.WriteLine("El máximo elemento es: {0}",colec.maximo());
 
-            colec.agregar(new Numero(2));
-            Console.WriteLine("El minimo elemento es: {0}", colec.minimo());
+            //colec.agregar(new Numero(2));
+            //Console.WriteLine("El minimo elemento es: {0}", colec.minimo());
             //colec.agregar(new Numero(3));
             //Console.WriteLine(colec.minimo());
 
+            Pila pila = new Pila();
+            Teacher maestro = new Teacher();
+            Aula aula = new Aula(maestro);
+
+            pila.setOrdenInicio(new OrdenInicio(aula));
+            pila.setOrdenLlegaAlumno(new OrdenLlegaAlumno(aula));
+            pila.setOrdenAulaLlena(new OrdenAulaLlena(aula));
+
+            llenar(pila, 1);
+            llenar(pila, 4);
+
             Console.ReadKey();
+        }
+        static void llenar(Coleccionable coleccion, int opcion)
+        {
+            Comparable comparable;
+            for (int i = 0; i <= 20; i++)
+            {
+                comparable = fabricaDeComparables.crearAleatorio(opcion);
+                coleccion.agregar(comparable);
+            }
         }
     }
 }

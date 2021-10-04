@@ -20,6 +20,7 @@ namespace Práctica_5
         }
         public void nuevoAlumno(IAlumno alum)
         {
+            alumno = alum;
             teacher.goToClass(new AdapterAlumno(alumno));
         }
         public void claseLista()

@@ -4,15 +4,32 @@ using System.Text;
 
 namespace Práctica_5
 {
-    class Pila : Coleccionable, Iterable
+    class Pila : Coleccionable, Iterable, Ordenable
     {
+        OrdenEnAula1 ordenInicio = null;
+        OrdenEnAula1 ordenAulaLLena = null;
+        OrdenEnAula2 ordenLLegadaAlumno = null;
         List<Comparable> coleccion;
+
         public Pila()
         {
             coleccion = new List<Comparable>();
         }
+
         public void agregar(Comparable dato)
         {
+            if(coleccion.Count == 0)
+            {
+                if (ordenInicio != null)
+                    ordenInicio.ejecutar();
+            }
+            if (ordenLLegadaAlumno != null)
+                ordenLLegadaAlumno.ejecutar(dato);
+            if(coleccion.Count == 40)
+            {
+                if (ordenAulaLLena != null)
+                    ordenAulaLLena.ejecutar();
+            }
             coleccion.Add(dato);
         }
         public Comparable desapilar()
@@ -59,6 +76,21 @@ namespace Práctica_5
         public Iterador crearIterador()
         {
             return new PilaIterador(coleccion);
+        }
+
+        public void setOrdenInicio(OrdenEnAula1 ordenIni)
+        {
+            ordenInicio = ordenIni;
+        }
+
+        public void setOrdenLlegaAlumno(OrdenEnAula2 ordenLLeAlum)
+        {
+            ordenLLegadaAlumno = ordenLLeAlum;
+        }
+
+        public void setOrdenAulaLlena(OrdenEnAula1 ordenAula1)
+        {
+            ordenAulaLLena = ordenAula1;
         }
     }
 }
