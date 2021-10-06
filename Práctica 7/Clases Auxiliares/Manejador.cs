@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Práctica_7
 {
-    abstract class Manejador
+    public abstract class Manejador
     {
 		protected Manejador sucesor = null;
 
@@ -38,6 +38,20 @@ namespace Práctica_7
 			string valor = null;
 			if (sucesor != null)
                 valor = sucesor.stringPorTeclado();
+			return valor;
+        }
+		virtual public double numeroDesdeArchivo(double max)
+        {
+			double valor = 0;
+			if (sucesor != null)
+				valor = sucesor.numeroDesdeArchivo(max);
+			return valor;
+        }
+		virtual public string stringDesdeArchivo(int cant)
+        {
+			string valor = null;
+			if (sucesor != null)
+				valor = sucesor.stringDesdeArchivo(cant);
 			return valor;
         }
 	}

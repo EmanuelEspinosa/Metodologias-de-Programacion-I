@@ -8,5 +8,6 @@ namespace Práctica_7
     {
         Comparable crearAleatorio();
         Comparable crearPorTeclado();
+        Comparable crearLeyendoDeArchivo();
     }
 }

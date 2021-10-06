@@ -7,8 +7,6 @@ namespace Práctica_7
     class FabricaDeAlumnosCompuestos : fabricaDeComparables
     {
         Manejador handler = crearCadenaDeResponsabilidades();
-        //GeneradorDeDatosAleatorios gen = new GeneradorDeDatosAleatorios();
-        //LectorDeDatos lector = new LectorDeDatos();
 
         public override Comparable crearAleatorio()
         {
@@ -17,6 +15,14 @@ namespace Práctica_7
             AlumCompos.AddAlum(alumProxy);
             return AlumCompos;
 
+        }
+
+        public override Comparable crearLeyendoDeArchivo()
+        {
+            AlumnoComposite AlumCompos = new AlumnoComposite();
+            ProxyAlumno alumProxy = new ProxyAlumno(handler.stringDesdeArchivo(15), (int)handler.numeroDesdeArchivo(1000), (int)handler.numeroDesdeArchivo(3));
+            AlumCompos.AddAlum(alumProxy);
+            return AlumCompos;
         }
 
         public override Comparable crearPorTeclado()

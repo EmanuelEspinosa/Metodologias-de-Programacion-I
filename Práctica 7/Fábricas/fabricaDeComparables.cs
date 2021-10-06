@@ -14,6 +14,7 @@ namespace Práctica_7
 
         public abstract Comparable crearAleatorio();
         public abstract Comparable crearPorTeclado();
+        public abstract Comparable crearLeyendoDeArchivo();
 
         public static Comparable crearAleatorio(int opcion)
         {
@@ -65,12 +66,37 @@ namespace Práctica_7
             }
             return fabrica.crearPorTeclado();
         }
+        public static Comparable crearLeyendoDeArchivo(int opcion)
+        {
+            FabricaDeComparables fabrica = null;
+            switch (opcion)
+            {
+                case ALUMNOS:
+                    fabrica = new FabricaDeAlumnos();
+                    break;
+                case NUMEROS:
+                    fabrica = new FabricaDeNumeros();
+                    break;
+                case VENDEDORES:
+                    fabrica = new FabricaDeVendedores();
+                    break;
+                case ALUMNOS_MUY_ESTUDIOSOS:
+                    fabrica = new FabricaDeAlumnosEstudiosos();
+                    break;
+                case ALUMNO_COMPUESTO:
+                    fabrica = new FabricaDeAlumnosCompuestos();
+                    break;
+                default:
+                    break;
+            }
+            return fabrica.crearLeyendoDeArchivo();
+        }
         protected static Manejador crearCadenaDeResponsabilidades()
         {
             Manejador m = new GeneradorDeDatosAleatorios(null);
             m = new LectorDeDatos(m);
+            m = new LectorDeArchivos(m);
             return m;
         }
-
     }
 }
