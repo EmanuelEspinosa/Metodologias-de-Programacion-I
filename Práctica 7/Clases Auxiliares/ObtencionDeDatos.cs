@@ -23,10 +23,12 @@ namespace Práctica_7
 		// El alumno deberá agregar la ruta correspondiente a su equipo donde haya guardado el archvo con los datos
 		private const string ruta_archivo = @"C:\Users\Emanuel Espinosa\Documents\Repositorio Universidad\Metodologías de Programación 1\Práctica 7\datos.txt";
 		// --------------------------------------------------------------------------------------------------------
-		
+
+		private static LectorDeArchivos unicoLectorDeArchivos = null;
+
 		private StreamReader lector_de_archivos;
-		
-		public LectorDeArchivos(Manejador sucesor) : base(sucesor)
+
+		private  LectorDeArchivos(Manejador sucesor) : base(sucesor)
 		{
 			lector_de_archivos = new StreamReader(ruta_archivo);
 		}
@@ -43,6 +45,13 @@ namespace Práctica_7
 			linea = linea.Substring(linea.IndexOf('\t') + 1);
 			cant = Math.Min(cant, linea.Length);
 			return linea.Substring(0, cant);
+		}
+
+		public static LectorDeArchivos getInstance()
+        {
+			if (unicoLectorDeArchivos == null)
+				unicoLectorDeArchivos = new LectorDeArchivos(LectorDeDatos.getInstance());
+			return unicoLectorDeArchivos;
 		}
 	}
 }

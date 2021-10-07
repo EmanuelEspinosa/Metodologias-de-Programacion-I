@@ -6,7 +6,9 @@ namespace Práctica_7
 {
     class GeneradorDeDatosAleatorios : Manejador
     {
-        public GeneradorDeDatosAleatorios(Manejador sucesor) : base(sucesor) { }
+        private GeneradorDeDatosAleatorios(Manejador sucesor) : base(sucesor) { }
+
+        private static GeneradorDeDatosAleatorios unicoGeneradorDeDatosAleatorios = null;
 
         private Random rdn = new Random();
         private string nuevaCadena;
@@ -33,6 +35,13 @@ namespace Práctica_7
         public override string ToString()
         {
             return nuevaCadena.ToString();
+        }
+
+        public static GeneradorDeDatosAleatorios getInstance()
+        {
+            if (unicoGeneradorDeDatosAleatorios == null)
+                unicoGeneradorDeDatosAleatorios = new GeneradorDeDatosAleatorios(null);
+            return unicoGeneradorDeDatosAleatorios;
         }
     }
 }

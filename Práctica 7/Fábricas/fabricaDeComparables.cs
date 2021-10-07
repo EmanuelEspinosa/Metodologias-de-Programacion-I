@@ -93,9 +93,9 @@ namespace Práctica_7
         }
         protected static Manejador crearCadenaDeResponsabilidades()
         {
-            Manejador m = new GeneradorDeDatosAleatorios(null);
-            m = new LectorDeDatos(m);
-            m = new LectorDeArchivos(m);
+            Manejador m = GeneradorDeDatosAleatorios.getInstance();
+            m = LectorDeDatos.getInstance();
+            m = LectorDeArchivos.getInstance();
             return m;
         }
     }

@@ -17,6 +17,7 @@ namespace Práctica_7
             }
             for (int i = 0; i < 2; i++)
             {
+                Console.WriteLine("Ingresar nombre, dni, legajo y promedio del alumno: ");
                 IAlumno alum = (IAlumno)fabricaDeComparables.crearPorTeclado(2);
                 aulaNueva.nuevoAlumno(alum);
             }
@@ -25,6 +26,7 @@ namespace Práctica_7
                 IAlumno alum = (IAlumno)fabricaDeComparables.crearLeyendoDeArchivo(1);
                 alumnoCompuesto.AddAlum(alum);
             }
+            Console.Clear();
             aulaNueva.nuevoAlumno(alumnoCompuesto);
             teacher.teachingAClass();
 

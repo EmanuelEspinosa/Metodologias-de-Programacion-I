@@ -6,7 +6,7 @@ namespace Práctica_7
 {
     public abstract class Manejador
     {
-		protected Manejador sucesor = null;
+		private Manejador sucesor = null;
 
 		public Manejador(Manejador sucesor)
 		{
